@@ -32,6 +32,7 @@ function setGameElements() {
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
+        //pickElem.style.display = 'block';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -91,7 +92,7 @@ function checkRoundWinner(playerPick, computerPick) {
         computer.score++;
     }
     setGamePoints();
-    //endGame();
+    endGame();
 }
 
 function playerPick(playerPick) {
@@ -108,15 +109,19 @@ function setGamePoints() {
     computerPointsElem.innerHTML = computer.score;
 } 
 
-/*function endGame() {
-	if (player.score || computer.score == 10) {
+//var whoWin = document.getElementsByTagName('h3');
+function endGame() {
+	if (player.score == 10 || computer.score == 10) {
     	gameState = 'ended';
+    	setGameElements();
 	}
 
 	if (player.score == 10) {
-		playerPickElem.innerHTML = 'Winnner is' + player.name;
+		alert('Winnner is' + player.name);
+		//whoWin.innerHTML = 'Winnner is' + player.name;
 	} else if (computer.score == 10) {
-		playerPickElem.innerHTML = 'Winner is computer';
+		alert('Winner is computer');
+		//whoWin.innerHTML = 'Winnner is computer';
 	}
 
-} */
+} 
