@@ -109,7 +109,7 @@ function setGamePoints() {
     computerPointsElem.innerHTML = computer.score;
 } 
 
-//var whoWin = document.getElementsByTagName('h3');
+var whoWin = document.getElementsByTagName('h3');
 function endGame() {
 	if (player.score == 10 || computer.score == 10) {
     	gameState = 'ended';
@@ -117,11 +117,11 @@ function endGame() {
 	}
 
 	if (player.score == 10) {
-		alert('Winnner is' + player.name);
-		//whoWin.innerHTML = 'Winnner is' + player.name;
+		//alert('Winnner is' + player.name);
+		whoWin[0].innerHTML = 'Winnner is' + player.name;
 	} else if (computer.score == 10) {
-		alert('Winner is computer');
-		//whoWin.innerHTML = 'Winnner is computer';
+		//alert('Winner is computer');
+		whoWin[0].innerHTML = 'Winnner is computer';
 	}
 
 } 
